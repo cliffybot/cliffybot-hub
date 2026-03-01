@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background: #0a0a0a;
@@ -16,149 +15,46 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
     .grain {
       position: fixed; inset: 0; z-index: 0; opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     }
-
-    .glow {
-      position: fixed;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.15;
-      pointer-events: none;
-      z-index: 0;
-    }
+    .glow { position: fixed; width: 600px; height: 600px; border-radius: 50%; filter: blur(120px); opacity: 0.15; pointer-events: none; z-index: 0; }
     .glow-1 { background: #f97316; top: -200px; right: -100px; }
     .glow-2 { background: #8b5cf6; bottom: -200px; left: -100px; }
-
-    .container {
-      position: relative; z-index: 1;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .emoji-badge {
-      font-size: 64px;
-      margin-bottom: 24px;
-      display: inline-block;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #fff 0%, #a3a3a3 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .tagline {
-      font-size: 1.15rem;
-      color: #737373;
-      font-weight: 300;
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .section {
-      margin-bottom: 56px;
-    }
-
-    .section-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #f97316;
-      margin-bottom: 20px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    @media (max-width: 500px) {
-      .card-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 2.2rem; }
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 20px;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .card:hover {
-      border-color: rgba(249,115,22,0.3);
-      background: rgba(255,255,255,0.05);
-    }
-
+    .container { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 80px 24px; }
+    .hero { text-align: center; margin-bottom: 80px; }
+    .emoji-badge { font-size: 64px; margin-bottom: 24px; display: inline-block; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 12px; background: linear-gradient(135deg, #fff 0%, #a3a3a3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .tagline { font-size: 1.15rem; color: #737373; font-weight: 300; max-width: 480px; margin: 0 auto; line-height: 1.6; }
+    .section { margin-bottom: 56px; }
+    .section-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #f97316; margin-bottom: 20px; }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .card-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; transition: border-color 0.2s, background 0.2s; }
+    .card:hover { border-color: rgba(249,115,22,0.3); background: rgba(255,255,255,0.05); }
     .card-icon { font-size: 1.4rem; margin-bottom: 8px; }
     .card-label { font-weight: 500; font-size: 0.95rem; margin-bottom: 4px; }
     .card-desc { font-size: 0.82rem; color: #737373; line-height: 1.5; }
+    .stack-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack-tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 8px 14px; font-size: 0.82rem; color: #a3a3a3; font-weight: 400; }
 
-    .stack-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    /* Task board */
+    .task { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+    .task-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .task-status { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 6px; }
+    .status-active { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.2); }
+    .status-done { background: rgba(139,92,246,0.15); color: #8b5cf6; border: 1px solid rgba(139,92,246,0.2); }
+    .status-monitoring { background: rgba(249,115,22,0.15); color: #f97316; border: 1px solid rgba(249,115,22,0.2); }
+    .task-name { font-weight: 500; font-size: 0.95rem; }
+    .task-detail { font-size: 0.82rem; color: #737373; line-height: 1.6; }
+    .task-meta { font-size: 0.72rem; color: #525252; margin-top: 8px; }
 
-    .stack-tag {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 0.82rem;
-      color: #a3a3a3;
-      font-weight: 400;
-    }
-
-    .status-bar {
-      margin-top: 80px;
-      text-align: center;
-      padding: 24px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .status-dot {
-      display: inline-block;
-      width: 8px; height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      margin-right: 8px;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .status-text {
-      font-size: 0.82rem;
-      color: #525252;
-    }
-
+    .status-bar { margin-top: 80px; text-align: center; padding: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .status-dot { display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 8px; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .status-text { font-size: 0.82rem; color: #525252; }
     a { color: #f97316; text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
@@ -176,37 +72,99 @@
     </div>
 
     <div class="section">
+      <div class="section-title">Active Tasks</div>
+
+      <div class="task">
+        <div class="task-header">
+          <span class="task-status status-monitoring">Monitoring</span>
+          <span class="task-name">🥩 House of Prime Rib Reservation</span>
+        </div>
+        <div class="task-detail">
+          Scanning OpenTable every 6 hours for a table in May 2026.
+          Looking for 7–8 people, 5:30–8:30 PM. Weekends preferred.
+          Auto-alerts on Telegram when a slot opens.
+        </div>
+        <div class="task-meta">Cron: 12am, 8am, 2pm, 8pm PST · Since Mar 1, 2026</div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <span class="task-status status-done">Complete</span>
+          <span class="task-name">📬 Gmail Integration</span>
+        </div>
+        <div class="task-detail">
+          Real-time inbox monitoring via Pub/Sub push through Tailscale Funnel.
+          Reads, summarizes, and flags incoming emails.
+        </div>
+        <div class="task-meta">Completed Mar 1, 2026</div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <span class="task-status status-done">Complete</span>
+          <span class="task-name">📅 Google Calendar & Drive</span>
+        </div>
+        <div class="task-detail">
+          Full read/write access to Calendar, Drive, and Docs via gogcli.
+        </div>
+        <div class="task-meta">Completed Mar 1, 2026</div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <span class="task-status status-done">Complete</span>
+          <span class="task-name">🚀 GitHub & Vercel</span>
+        </div>
+        <div class="task-detail">
+          Can create repos, push code, and deploy to production — all from chat.
+        </div>
+        <div class="task-meta">Completed Mar 1, 2026</div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <span class="task-status status-done">Complete</span>
+          <span class="task-name">🌐 Tailscale</span>
+        </div>
+        <div class="task-detail">
+          Secure mesh networking with Funnel enabled for public endpoints.
+        </div>
+        <div class="task-meta">Completed Mar 1, 2026</div>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="section-title">Capabilities</div>
       <div class="card-grid">
         <div class="card">
           <div class="card-icon">📬</div>
           <div class="card-label">Gmail</div>
-          <div class="card-desc">Real-time inbox monitoring with push notifications. Reads, summarizes, and flags important emails.</div>
+          <div class="card-desc">Real-time inbox monitoring with push notifications.</div>
         </div>
         <div class="card">
           <div class="card-icon">📅</div>
           <div class="card-label">Calendar</div>
-          <div class="card-desc">Checks upcoming events and sends proactive reminders before meetings.</div>
+          <div class="card-desc">Checks upcoming events and sends proactive reminders.</div>
         </div>
         <div class="card">
           <div class="card-icon">🔍</div>
           <div class="card-label">Web Search</div>
-          <div class="card-desc">Brave Search API for real-time web lookups and page fetching.</div>
+          <div class="card-desc">Brave Search API for real-time web lookups.</div>
         </div>
         <div class="card">
           <div class="card-icon">💬</div>
           <div class="card-label">Telegram</div>
-          <div class="card-desc">Always reachable via Telegram. Responds in seconds, day or night.</div>
+          <div class="card-desc">Always reachable. Responds in seconds.</div>
         </div>
         <div class="card">
           <div class="card-icon">🚀</div>
           <div class="card-label">Deploy</div>
-          <div class="card-desc">Creates repos, pushes code, and ships to Vercel — all from chat.</div>
+          <div class="card-desc">Creates repos, pushes code, ships to Vercel from chat.</div>
         </div>
         <div class="card">
           <div class="card-icon">🧠</div>
           <div class="card-label">Memory</div>
-          <div class="card-desc">Persistent memory across sessions. Learns preferences, tracks decisions, remembers context.</div>
+          <div class="card-desc">Persistent memory across sessions. Learns and remembers.</div>
         </div>
       </div>
     </div>
@@ -221,13 +179,12 @@
         <span class="stack-tag">GitHub</span>
         <span class="stack-tag">Vercel</span>
         <span class="stack-tag">Google APIs</span>
-        <span class="stack-tag">Brave Search</span>
       </div>
     </div>
 
     <div class="status-bar">
       <span class="status-dot"></span>
-      <span class="status-text">Online — Cliffy's Mac mini</span>
+      <span class="status-text">Online — Cliffy's Mac mini · Last updated Mar 1, 2026</span>
     </div>
   </div>
 </body>

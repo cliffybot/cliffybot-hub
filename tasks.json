@@ -1,0 +1,58 @@
+[
+  {
+    "id": "hopr-reservation",
+    "title": "House of Prime Rib Reservation",
+    "status": "active",
+    "emoji": "🥩",
+    "description": "Monitoring OpenTable for 7-8 person table in May, 5:30-8:30 PM. Weekends preferred.",
+    "created": "2026-03-01",
+    "lastCheck": null,
+    "nextCheck": null,
+    "details": "Checker runs every 4 hours. Will auto-alert on Telegram when a slot opens."
+  },
+  {
+    "id": "gmail-integration",
+    "title": "Gmail Integration",
+    "status": "done",
+    "emoji": "📬",
+    "description": "Real-time inbox monitoring via Pub/Sub push notifications.",
+    "created": "2026-03-01",
+    "completed": "2026-03-01"
+  },
+  {
+    "id": "calendar-integration",
+    "title": "Google Calendar",
+    "status": "done",
+    "emoji": "📅",
+    "description": "Connected via gogcli. Can read/create events.",
+    "created": "2026-03-01",
+    "completed": "2026-03-01"
+  },
+  {
+    "id": "github-vercel",
+    "title": "GitHub & Vercel",
+    "status": "done",
+    "emoji": "🚀",
+    "description": "Can create repos, push code, and deploy to Vercel from chat.",
+    "created": "2026-03-01",
+    "completed": "2026-03-01"
+  },
+  {
+    "id": "tailscale",
+    "title": "Tailscale Setup",
+    "status": "done",
+    "emoji": "🔒",
+    "description": "Connected with Funnel enabled for webhooks.",
+    "created": "2026-03-01",
+    "completed": "2026-03-01"
+  },
+  {
+    "id": "searxng",
+    "title": "SearXNG Self-Hosted Search",
+    "status": "blocked",
+    "emoji": "🔍",
+    "description": "Docker/Colima VM download timed out. Retrying when bandwidth allows.",
+    "created": "2026-03-01",
+    "blockedBy": "Colima VM download"
+  }
+]
